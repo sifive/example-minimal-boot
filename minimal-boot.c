@@ -11,11 +11,6 @@ void metal_init_run() {
     /* Run our own init instead of the metal constructors */
     my_global = 1;
 }
-
-void metal_fini_run() {
-    /* Don't run the metal destructors */
-}
-
 int main() {
     /* Check to make sure our custom constructor ran */
     if (my_global != 1) {
@@ -26,9 +21,6 @@ int main() {
     metal_init();
 
     printf("minimal-boot\n");
-
-    /* Now run the metal destructors */
-    metal_fini();
 
     return 0;
 }
